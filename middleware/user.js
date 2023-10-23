@@ -6,8 +6,14 @@ export default defineNuxtRouteMiddleware((to, from) => {
   // if (isAuthenticated() === false) {
   //   return navigateTo('/user')
   // }
-    if (to.path !== "/user/3") {
-      // setting the redirect code to '301 Moved Permanently'
-      return navigateTo("/user", { redirectCode: 301 });
-    }
+  // console.log(to,"TO")
+  // console.log(from,'FROM')
+  const route = useRoute()
+  if (to.path == "/user/4") {
+    // setting the redirect code to '301 Moved Permanently'
+    return abortNavigation();
+  }
+  if (route.params.id == 3) {
+    return navigateTo("/user");
+  }
 })
