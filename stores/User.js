@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import myFetchClass from "@/setting/fetch";
+import myFetchClass from "@/settings/fetch";
 let myFetch = new myFetchClass();
 export const useUserStore = defineStore("userData", () => {
   const token = ref("");
